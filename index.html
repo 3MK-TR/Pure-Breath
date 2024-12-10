@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pure Breathe is an advanced air quality monitoring system providing real-time environmental data for a healthier tomorrow.">
+    <title>Pure Breath - Air Quality Monitoring</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Pure Breath</h1>
+    <h2>Real-Time Air Quality Monitoring for a Cleaner Tomorrow</h2>
+    <div id="data-container">
+        <div class="data">
+            <p>Temperature: <span id="temperature">N/A</span> °C</p>
+            <p>Humidity: <span id="humidity">N/A</span> %</p>
+            <p>Combustible and Volatile Gases (CVG): <span id="mq2">N/A</span> ppm</p>
+            <p>Air Quality Pollutants (AQP): <span id="mq135">N/A</span> ppm</p>
+            <p>Air Dust: <span id="dust">N/A</span> µg/m³</p>
+        </div>
+	<div class="qr-code">
+		<img src="QRcode.png" alt="QR Code leading to Pure Breathe resources">
+    		<p id="qr-caption">Scan this QR code to download the App</p>
+    		<a href="https://drive.google.com/drive/folders/1ZGlP_f7qjPL_BQfuzg4j5TP6PK2KD5dO?usp=sharing" target="_blank">Access Pure Breath Resources</a>
+    		<p id="qr-caption">Export and Download Database file in:</p>
+    		<div class="links">
+        		<a href="https://thingspeak.mathworks.com/channels/2776577/feed.csv" target="_blank">CSV</a>
+    		</div>
+	</div>
+    </div>
+
+    <div id="charts-container">
+        <iframe src="https://thingspeak.mathworks.com/channels/2776577/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Temperature&type=line&xaxis=Time+%28s%29"width=4000 height=2000></iframe>
+        <iframe src="https://thingspeak.mathworks.com/channels/2776577/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidity&type=line&xaxis=Time+%28s%29&yaxis=Humidity+percentage"></iframe>
+        <iframe src="https://thingspeak.mathworks.com/channels/2776577/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Combustible+and+Volatile+Gases+%28CVG%29&type=line&xaxis=Time+%28s%29&yaxis=CVG%28ppm%29"></iframe>
+        <iframe src="https://thingspeak.mathworks.com/channels/2776577/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Air+Quality+Pollutants%C2%A0%28AQP%29&type=line&xaxis=Time+%28s%29&yaxis=AQP%28pmm%29"></iframe>
+        <iframe src="https://thingspeak.mathworks.com/channels/2776577/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Air+Dust+PM2.5&type=line&xaxis=Time+%28s%29&yaxis=Air+Dust%28ug%2Fm3%29"></iframe>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-image: url('background-image.jpg'); /* Replace with your actual background image path */
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-repeat: no-repeat; /* Prevents tiling/duplication */
+    background-position: center center; /* Centers the image */
+    background-attachment: fixed; /* Keeps the background fixed during scrolling */
+    background-color: #333; /* Fallback background color */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Add Overlay for Entire Background */
+body::before {
+    content: '';
+    position: fixed; /* Ensures the overlay covers the entire viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Consistent shading for the entire background */
+    z-index: -1;
+}
+
+/* Headings */
+h1 {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 3em;
+}
+
+h2 {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 1.9em;
+}
+
+/* Data Container */
+#data-container {
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    max-width: 1000px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+/* Data Section */
+.data, .qr-code {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+/* QR Code Section */
+.qr-code img {
+    width: 150px;
+    height: auto;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.1);
+}
+
+.qr-code a {
+    margin: 0 5px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.qr-code a:before { 
+    content: " • "; 
+    margin-left: 5px; }
+
+.qr-code a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.qr-code a:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+}
+
+/* Caption */
+#qr-caption {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Charts Container */
+#charts-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between charts */
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    padding: 10px;
+    width: 90%;
+}
+
+/* Chart Styling */
+iframe {
+    width: 300px; /* Ensures consistent chart width */
+    height: 250px; /* Consistent chart height */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Headings for Smaller Screens */
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    /* Data Container Adjustments */
+    #data-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .qr-code img {
+        width: 120px;
+    }
+
+    /* Charts Vertical Layout */
+    #charts-container {
+        flex-direction: column; /* Arrange charts vertically */
+        align-items: center;
+    }
+
+    iframe {
+        width: 100%; /* Adjust chart width for smaller screens */
+        max-width: 300px; /* Prevent charts from becoming too large */
+    }
+}
